@@ -10,6 +10,8 @@ import Dependencies.implementationNetwork
 import Dependencies.implementationParsing
 import Dependencies.implementationTimber
 
+val API_KEY: String by project
+
 plugins {
     id("com.android.application")
     kotlin("android")
@@ -29,7 +31,10 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+
+        buildConfigField("String", "API_KEY", API_KEY)
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
